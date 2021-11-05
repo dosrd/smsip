@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+">
+   <bean id="live" class="com.dabarobjects.madex.gateway.MadexConfBean">
+        <property name="mode" value="LIVE" />
+        <property name="backupTime" value="22,30" />
+        <property name="defMessHeader" value="NPHCDA!" /> 
+        <property name="entityBeansPath" value="phc-madex-dataconfig" />
+        <property name="reportCompileCycleinMonths" value="3" />
+        <property name="reportSyncCycleinMonths" value="3" />
+        <property name="threads" value="40" />
+        <property name="reportSynchPath" value="http://192.168.0.102:8080/report/gate" />
+    </bean>
+    <bean id="test" class="com.dabarobjects.madex.gateway.MadexConfBean">
+        <property name="mode" value="TEST" />
+        <property name="backupTime" value="0" />
+        <property name="defMessHeader" value="MADEX-TEST" /> 
+        <property name="entityBeansPath" value="phc-madex-dataconfig-test" />
+        <property name="reportCompileCycleinMonths" value="3" />
+        <property name="reportSyncCycleinMonths" value="3" />
+        <property name="threads" value="10" />
+        <property name="reportSynchPath" value="http://192.168.0.102:8080/report/gate" />
+    </bean>
+    <bean id="databridge" class="com.dabarobjects.data.operations.bridge.AbstractBridgeOperation">
+        <constructor-arg index="0" value="phc-madex-dataconfig" />
+    </bean>
+    
+    <bean id="smsspike" class="com.dabarobjects.spikeservice.SpikeService">
+        <constructor-arg index="0" value="http://smsspike.com/service" />
+        <!--constructor-arg index="1" value="25218328" /-->
+        <!--constructor-arg index="2" value="deji" /-->
+        <constructor-arg index="1" value="46482361" />
+        <constructor-arg index="2" value="password@1" />
+    </bean>
+</beans>

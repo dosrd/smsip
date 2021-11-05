@@ -1,0 +1,1 @@
+01-16 00:25:27.201: V/Location ID >>>>>>>:(26666): Location[mProvider=gps,mTime=1357570090000,mLatitude=9.052838333333334,mLongitude=7.476813333333333,mHasAltitude=true,mAltitude=510.6,mHasSpeed=true,mSpeed=0.0,mHasBearing=true,mBearing=0.0,mHasAccuracy=true,mAccuracy=23.7,mExtras=Bundle[mParcelledData.dataSize=4]]
